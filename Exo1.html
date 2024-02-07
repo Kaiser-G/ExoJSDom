@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Accueil</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-success">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">Accueil</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="Exo1.html">Exercice 1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Exo2.html">Exercice 2</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Exo3.html">Exercice 3</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Exo4.html">Exercice 4</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Exo5.html">Exercice 5</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Exo6.html">Exercice 6</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Exo7.html">Exercice 7</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Exo8.html">Exercice 8</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Exo9.html">Exercice 9</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Exo10.html">Exercice 10</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="container">
+        <h1>Question 1</h1>
+        <p>
+            <strong>Les habitants de Zorglub paient l'impôt selon les règles suivantes : </strong><br>
+            <br>
+            Les hommes de plus de 20 ans paient l'impôt.<br>
+
+            Les femmes paient l'impôt si elles ont entre 18 et 35 ans.<br>
+
+            Les autres ne paient pas d'impôt.<br>
+            <br>
+            Le programme demandera donc l'âge et le sexe du Zorglubien, et se prononcera donc ensuite sur le fait que
+            l'habitant est
+            imposable ou non.
+        </p>
+    </div>
+
+    <!--Début de l'exo-->
+
+    <h2>Formulaire à remplir</h2>
+
+    <form action="" method="post">
+        <label for="sex">Vous êtes : </label>
+        <select name="genre" id="genre">
+            <option value="femme">Femme</option>
+            <option value="homme">Homme</option>
+        </select>
+        <label for="age">Age :</label>
+        <input type="number" id="age" name="age" min="0" max="100" step="1" value="30">
+
+
+        <input class="btn btn-primary" type="submit" value="Valider">
+
+    </form>
+
+    <!--Message de réponse-->
+
+    <h3>! Vous êtes soumis à l'impôt !</h3>
+
+
+
+    <script>
+        "use strict"; // Oblige la déclaration des variables
+        // Zone de déclaration des PROCEDURES ET FONCTIONS
+
+        // Zone de déclaration des variables GLOBALES 
+        // (celles du programme PRINCIPAL)
+
+        // Se déclenche lorsque TOUTE LA PAGE est chargée (Style, images etc..)
+        window.addEventListener('load', (event) => {
+            // Le code de PROGRAMME PRINCIPAL
+
+        });
+
+
+
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
