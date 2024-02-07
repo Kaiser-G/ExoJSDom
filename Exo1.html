@@ -88,42 +88,53 @@
             <option value="homme">Homme</option>
         </select>
         <label for="age">Age :</label>
-        <input type="number" id="age" name="age" min="0" max="100" step="1" value="30">
+        <input type="number" id="age" name="age" min="0" max="100" step="1" value="0">
 
-
+        <!--button-->
         <input id="valide" class="btn btn-primary" type="submit" value="Valider">
+
 
     </form>
 
     <!--Message de réponse-->
-
-    <h3>! Vous êtes soumis à l'impôt !</h3>
+    <div id="message"></div>
 
 
 
     <script>
         "use strict"; // Oblige la déclaration des variables
         // Zone de déclaration des PROCEDURES ET FONCTIONS
-        function tuClick() {
-            alert("tu click !")
+        function calculImpo(event) {
+            let genre = document.getElementById("genre");
+            let age = document.getElementById("age");
+            let c1, c2;
+            c1 = (genre.value === "homme") && (age.value > 20);
+            c2 = (genre.value == "femme") && (age.value > 18) && (age < 35);
+            //message
+            message = document.getElementById("message");
+            if (c1 || c2) {
+                message.innerHTML = "imposable";
+            } else {
+                message.innerHTML = "Non imposable";
+            }
+            //Permet de désactiver l'envoi du formulaire
+            event.preventDefault();
         }
+
+
         // Zone de déclaration des variables GLOBALES 
         // (celles du programme PRINCIPAL)
 
+
+        let message;
         // Se déclenche lorsque TOUTE LA PAGE est chargée (Style, images etc..)
         window.addEventListener('load', (event) => {
-            // Le code de PROGRAMME PRINCIPAL
-            let genre = document.getElementById("genre");
+            // Le code de PROGRAMME PRINCIPAL   
 
-            alert(genre.option);
-
-
+            //Le bouton
             let btn = document.getElementById("valide");
-            btn.addEventListener("click", tuClick, false);
-
-
-
-
+            btn.addEventListener("click", calculImpo
+                , false);
 
         });
 
