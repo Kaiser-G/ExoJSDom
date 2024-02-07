@@ -91,7 +91,7 @@
         <input type="number" id="age" name="age" min="0" max="100" step="1" value="30">
 
 
-        <input class="btn btn-primary" type="submit" value="Valider">
+        <input id="valide" class="btn btn-primary" type="submit" value="Valider">
 
     </form>
 
@@ -104,13 +104,26 @@
     <script>
         "use strict"; // Oblige la déclaration des variables
         // Zone de déclaration des PROCEDURES ET FONCTIONS
-
+        function tuClick() {
+            alert("tu click !")
+        }
         // Zone de déclaration des variables GLOBALES 
         // (celles du programme PRINCIPAL)
 
         // Se déclenche lorsque TOUTE LA PAGE est chargée (Style, images etc..)
         window.addEventListener('load', (event) => {
             // Le code de PROGRAMME PRINCIPAL
+            let genre = document.getElementById("genre");
+
+            alert(genre.option);
+
+
+            let btn = document.getElementById("valide");
+            btn.addEventListener("click", tuClick, false);
+
+
+
+
 
         });
 
