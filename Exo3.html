@@ -79,65 +79,16 @@
 
     <!--Début de l'exo-->
 
-    <h2>Combien de copie voulez vous ?</h2>
-
-    <label for="nombre">Nombre de photocopie :</label>
-    <input type="number" id="nombreCopie" name="age" min="0" max="100" step="1" value="0">
-
-    <!--button-->
-    <input id="valide" class="btn btn-primary" type="submit" value="Valider">
-
-
-    <!--Message de réponse-->
-    <div id="message">!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</div>
-
     <script>
         "use strict"; // Oblige la déclaration des variables
         // Zone de déclaration des PROCEDURES ET FONCTIONS
-        function calculPrix(event) {
-            alert("fonction fonctionne")
-            let message;
-            message = document.getElementById("message");
-            let t;
-            let n = document.getElementById("nombreCopie").value;
-            n = parseFloat(n);
-            t = parseFloat(t);
-            let montantFacture;
-            if (n <= 10) {
-                alert("Votre facture est de : " + n * 0.1 + " euros " + " pour " + n + " photocopies.");
-                t = (n * 0.1);
-                message.innerHTML = "Votre facture est de : " + t + " euros " + " pour " + n + " photocopies.";
 
-
-            } else {
-                if (n <= 30) {
-                    t = 10 * 0.1 + (n - 10) * 0.09;
-                    message.innerHTML = "Votre facture est de : " + t + " euros " + " pour " + n + " photocopies.";
-                }
-
-            }
-            if (n > 30) {
-                t = 10 * 0.1 + 20 * 0.09 + (n - 30) * 0.08;
-                message.innerHTML = "Votre facture est de : " + t + " euros " + " pour " + n + " photocopies.";
-
-            }
-            //Permet de désactiver l'envoi du formulaire
-            event.preventDefault();
-
-        }
         // Zone de déclaration des variables GLOBALES 
         // (celles du programme PRINCIPAL)
-        let message;
 
         // Se déclenche lorsque TOUTE LA PAGE est chargée (Style, images etc..)
         window.addEventListener('load', (event) => {
             // Le code de PROGRAMME PRINCIPAL
-
-
-
-            let btn = document.getElementById("valide");
-            btn.addEventListener("click", calculPrix
-                , false);
 
         });
 
