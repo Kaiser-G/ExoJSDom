@@ -61,86 +61,81 @@
     </header>
     <!--énoncer-->
     <div class="container">
-        <h1>Question 4</h1>
+        <h1>Question 5</h1>
         <p>
-            <strong>Créer une application qui calcule la monnaie à rendre.</strong><br>
+            <strong>Écrire un programme en JavaScript qui demande à un utilisateur de saisir une adresse email via un
+                formulaire.</strong><br>
             <br>
-            Saisissez le montant du ticket à payer.<br>
+            exemple : monadresse@mail.com<br>
 
-            Saisissez la somme que le client a donné.<br>
+            Votre programme doit déterminer si l'adresse fournit par l'utilisateur est valide ou non.<br>
 
-            Simulez la remise de la monnaie en affichant le nombre de billet de "10 Euros", "5 Euros" et de pièces de "1
-            Euro".<br>
+            Pour ce faire analysez la chaîne de caractère saisie et trouver si il y a bien la présence d'un "@" et d'un
+            "."<br>
             <br>
-            Nous partons du principe que les montants sont des entiers.
+            Assurez-vous que le point soit bien présent derrière l'arrobase.<br>
+
+            Trouvez le moyen de vérifier l'email sans bouton pour votre formulaire.<br>
+            <strong>Attention</strong> : N'utilisez pas le type 'email' dans l'input de votre champ de saisi.
         </p>
     </div>
 
     <!--Début de l'exo-->
 
-    <h2>A payer</h2>
+    <h2>Entrez votre mail</h2>
 
-    <label for="panier">Montant du panier :</label>
-    <input type="number" id="panier" name="panier" min="0" max="1000" step="1" value="0">
-
-    <label for="payement">Payement :</label>
-    <input type="number" id="payement" name="payement" min="0" max="1000" step="1" value="0">
-
-    <!--button-->
-    <button id="valide" type="button" class="btn btn-primary">rendu monnaie</button>
+    <input id="texte" type="text">
 
     <!--Message de réponse-->
-    <div id="message"></div>
-
-    <!--images des billets-->
-
-    <img class="dix" src="./images/dix_euros.jpg" />
-    <div id="billetDix">0</div>
-
-    <img class="cinq" src="./images/cinq_euros.jpg" />
-    <div id="billetCinq">0</div>
-
-    <img class="un" src="./images/un_euro.jpg" />
-    <div id="billetUn">0</div>
+    <div id="message">hello</div>
 
     <script>
         "use strict"; // Oblige la déclaration des variables
         // Zone de déclaration des PROCEDURES ET FONCTIONS
-        let btn = document.querySelector("#valide");
+
         // Zone de déclaration des variables GLOBALES 
         // (celles du programme PRINCIPAL)
 
         // Se déclenche lorsque TOUTE LA PAGE est chargée (Style, images etc..)
         window.addEventListener('load', (event) => {
             // Le code de PROGRAMME PRINCIPAL
-            btn.addEventListener("click",
-                () => {
-                    let prix = document.getElementById("panier").value;
-                    let montantPayer = document.getElementById("payement").value;
-                    let monnaie = montantPayer - prix;
-                    message.innerHTML = "Je vous dois :" + monnaie + " euro.";
-                    //rendu de la monnaie
-                    let b10 = 0;
-                    while (monnaie >= 10) {
-                        b10 = b10 + 1;
-                        monnaie = monnaie - 10;
-                    }
-                    billetDix.innerHTML = b10;
+            let message = document.getElementById("message");
+            let texte = document.getElementById("texte");
+            texte.addEventListener("change",
+                (event) => {
+                    alert("fonction fonctionne");
+                    alert(texte);
 
-                    let b5 = 0;
-                    while (monnaie >= 5) {
-                        b5 = b5 + 1;
-                        monnaie = monnaie - 5;
-                    }
-                    billetCinq.innerHTML = b5;
 
-                    let b1 = 0;
-                    while (monnaie >= 1) {
-                        b1 = b1 + 1;
-                        monnaie = monnaie - 1;
+                    if (texte.indexOf("@")) {
+                        message.innerHTML = "votre mail contient un @";
+                    } else {
+                        message.innerHTML = "Vous avez oubliez le @"
                     }
-                    billetUn.innerHTML = b1;
+
                 }, false);
+
+            texte.addEventListener("keydown",
+                (event) => {
+                    alert("fonction 2 fonctionne");
+                    texte.substring(0)
+                    alert(texte);
+                    texte.indexOf("@");
+                    texte.includes(a, b, c, d, e);
+                    alert(texte);
+                    console.log(texte);
+
+                }, false);
+
+
+
+            //a enlever
+            message.addEventListener("click",
+                () => {
+                    message.innerHTML = "coucou";
+                }
+                , false);
+
         });
 
 

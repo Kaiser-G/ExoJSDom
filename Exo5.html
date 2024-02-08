@@ -82,6 +82,13 @@
 
     <!--Début de l'exo-->
 
+    <h2>Entrez votre mail</h2>
+
+    <input id="texte" type="text">
+
+    <!--Message de réponse-->
+    <div id="message"></div>
+
     <script>
         "use strict"; // Oblige la déclaration des variables
         // Zone de déclaration des PROCEDURES ET FONCTIONS
@@ -92,13 +99,32 @@
         // Se déclenche lorsque TOUTE LA PAGE est chargée (Style, images etc..)
         window.addEventListener('load', (event) => {
             // Le code de PROGRAMME PRINCIPAL
+            let message = document.getElementById("message");
+            let texte = document.getElementById("texte");
+            texte.addEventListener("keyup",
+                (event) => {
 
+                    //permet de récupérer la valeur du texte frappé
+                    let saisi = event.target.value;
+
+                    if ((saisi.indexOf("@") != -1) && (saisi.indexOf(".") != -1)) {
+                        message.innerHTML = "votre mail est valide";
+                    } else {
+                        message.innerHTML = "Votre mail est invalide";
+                    }
+
+                    // if (saisi.indexOf(".") != -1) {
+                    //     message.innerHTML = "votre mail contient un .";
+                    // } else {
+                    //     message.innerHTML = "Vous avez oubliez le .";
+                    // }
+
+
+
+                }, false);
         });
 
-
-
     </script>
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
