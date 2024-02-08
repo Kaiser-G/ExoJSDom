@@ -78,17 +78,67 @@
 
     <!--Début de l'exo-->
 
+    <label for="panier">Montant du panier :</label>
+    <input type="number" id="panier" name="panier" min="0" max="1000" step="1" value="0">
+
+    <label for="payement">Payement :</label>
+    <input type="number" id="payement" name="payement" min="0" max="1000" step="1" value="0">
+
+    <!--button-->
+    <button id="valide" type="button" class="btn btn-primary">rendu monnaie</button>
+
+    <!--Message de réponse-->
+    <div id="message"></div>
+
+    <!--images des billets-->
+
+    <img class="dix" src="./images/dix_euros.jpg" />
+    <div id="billetDix">0</div>
+
+    <img class="cinq" src="./images/cinq_euros.jpg" />
+    <div id="billetCinq">0</div>
+
+    <img class="un" src="./images/un_euro.jpg" />
+    <div id="billetUn">0</div>
+
     <script>
         "use strict"; // Oblige la déclaration des variables
         // Zone de déclaration des PROCEDURES ET FONCTIONS
-
+        let btn = document.querySelector("#valide");
         // Zone de déclaration des variables GLOBALES 
         // (celles du programme PRINCIPAL)
 
         // Se déclenche lorsque TOUTE LA PAGE est chargée (Style, images etc..)
         window.addEventListener('load', (event) => {
             // Le code de PROGRAMME PRINCIPAL
+            btn.addEventListener("click",
+                () => {
+                    let prix = document.getElementById("panier").value;
+                    let montantPayer = document.getElementById("payement").value;
+                    let monnaie = montantPayer - prix;
+                    message.innerHTML = "Je vous dois :" + monnaie + " euro.";
+                    //rendu de la monnaie
+                    let b10 = 0;
+                    while (monnaie >= 10) {
+                        b10 = b10 + 1;
+                        monnaie = monnaie - 10;
+                    }
+                    billetDix.innerHTML = b10;
 
+                    let b5 = 0;
+                    while (monnaie >= 5) {
+                        b5 = b5 + 1;
+                        monnaie = monnaie - 5;
+                    }
+                    billetCinq.innerHTML = b5;
+
+                    let b1 = 0;
+                    while (monnaie >= 1) {
+                        b1 = b1 + 1;
+                        monnaie = monnaie - 1;
+                    }
+                    billetUn.innerHTML = b1;
+                }, false);
         });
 
 
