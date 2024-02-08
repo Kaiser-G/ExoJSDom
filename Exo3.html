@@ -78,25 +78,59 @@
     </div>
 
     <!--Début de l'exo-->
+    <div class="container">
+        <h2>Quel heure est t'il ?</h2>
+
+        <label for="heure">HEURE :</label>
+        <input type="number" id="heure" name="heure" min="0" max="24" step="1" value="0">
+
+        <label for="minute">MINUTE :</label>
+        <input type="number" id="minute" name="minute" min="0" max="59" step="1" value="0">
+
+        <label for="seconde">SECONDE :</label>
+        <input type="number" id="seconde" name="seconde" min="0" max="59" step="1" value="0">
+
+        <!--button-->
+        <button id="valide" type="button" class="btn btn-primary">Valider</button>
+    </div>
+
+    <!--Message de réponse-->
+    <div id="message"></div>
 
     <script>
         "use strict"; // Oblige la déclaration des variables
         // Zone de déclaration des PROCEDURES ET FONCTIONS
-
+        let btn = document.querySelector("#valide");
         // Zone de déclaration des variables GLOBALES 
         // (celles du programme PRINCIPAL)
 
         // Se déclenche lorsque TOUTE LA PAGE est chargée (Style, images etc..)
         window.addEventListener('load', (event) => {
             // Le code de PROGRAMME PRINCIPAL
+            btn.addEventListener("click",
+                () => {
 
+                    let h = document.getElementById("heure").value;
+                    let m = document.getElementById("minute").value;
+                    let s = document.getElementById("seconde").value;
+
+                    s = parseInt(s) + 1;
+                    if (s == 60) {
+                        s = 0;
+                        m = parseInt(m) + 1;
+                        if (m == 60) {
+                            m = 0;
+                            h = parseInt(h) + 1;
+                            if (h == 24) {
+                                h = o;
+                            }
+                        }
+                    }
+                    message.innerHTML = "Dans une seconde il sera : " + h + " heure " + m + " minute " + s + " seconde";
+                }, false);
         });
 
-
-
     </script>
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>

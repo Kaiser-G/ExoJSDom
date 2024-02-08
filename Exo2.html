@@ -89,13 +89,13 @@
 
 
     <!--Message de réponse-->
-    <div id="message">!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</div>
+    <div id="message"></div>
 
     <script>
         "use strict"; // Oblige la déclaration des variables
         // Zone de déclaration des PROCEDURES ET FONCTIONS
         function calculPrix(event) {
-            alert("fonction fonctionne")
+
             let message;
             message = document.getElementById("message");
             let t;
@@ -104,9 +104,11 @@
             t = parseFloat(t);
             let montantFacture;
             if (n <= 10) {
-                alert("Votre facture est de : " + n * 0.1 + " euros " + " pour " + n + " photocopies.");
+                //alert("Votre facture est de : " + n * 0.1 + " euros " + " pour " + n + " photocopies.");
                 t = (n * 0.1);
                 message.innerHTML = "Votre facture est de : " + t + " euros " + " pour " + n + " photocopies.";
+                //ne fonctionne pas vraiment...
+                //message.innerHTML = '<div class = "alert alert - success"><strong>Votre facture est de : " + t + " euros " + " pour " + n + " photocopies.</strong></div>';
 
 
             } else {
