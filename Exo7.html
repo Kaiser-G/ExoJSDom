@@ -69,7 +69,7 @@
 
             Créez votre propre algorithme qui déterminera si le mot de passe saisi est sécurisé ou pas.<br>
             <br>
-            Nous avons quatre cas possibles:<br>
+            Nous avons quatre cas possibles :<br>
             Très sécurisé<br>
             Sécurisé<br>
             Moyen<br>
@@ -78,6 +78,13 @@
     </div>
 
     <!--Début de l'exo-->
+
+    <h2>Entrez votre mot de passe</h2>
+
+    <input id="texte" type="text">
+
+    <!--Message de réponse-->
+    <div id="message"></div>
 
     <script>
         "use strict"; // Oblige la déclaration des variables
@@ -89,6 +96,30 @@
         // Se déclenche lorsque TOUTE LA PAGE est chargée (Style, images etc..)
         window.addEventListener('load', (event) => {
             // Le code de PROGRAMME PRINCIPAL
+            let message = document.getElementById("message");
+            let motDePasse = document.getElementById("texte");
+
+            motDePasse.addEventListener("keyup",
+                (event) => {
+                    let saisi = event.target.value;
+                    console.log(saisi);
+                    // let check = new RegExp("a,e", "g");
+                    if (!(
+                        ((event.keyCode >= 48) && (event.keyCode <= 57)) ||
+                        ((event.keyCode >= 96) && (event.keyCode <= 105)) ||
+                        (event.keyCode == 8) || (event.keyCode == 46) ||
+                        (event.keyCode == 110))) {
+                        event.preventDefault();
+                        message.innerHTML = "plus de 8";
+                    }
+
+
+                    // if (saisi.toString()) {
+                    //     message.innerHTML = "plus de 8";
+
+                    // }
+
+                }, false);
 
         });
 
