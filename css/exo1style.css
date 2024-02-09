@@ -1,0 +1,39 @@
+/*Feuille de style pour exo1*/
+#exo {
+    background-color: #FF6347;
+}
+
+
+h2 {
+    text-align: center;
+}
+
+form {
+    text-align: center;
+    font-size: larger;
+}
+
+.col1 {
+    font-size: 1.5em;
+
+}
+
+select {
+    text-align: center;
+
+}
+
+.col3 {
+    font-size: 1.5em;
+
+}
+
+.col4 {
+    text-align: center;
+}
+
+#message {
+    text-align: center;
+    padding-top: 2%;
+
+}
