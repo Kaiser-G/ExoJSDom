@@ -1,0 +1,29 @@
+/*Feuille de style pour exo2*/
+#exo {
+    background-color: #FF6347;
+}
+
+
+h2 {
+    text-align: center;
+    margin-top: 2%;
+}
+
+#photo {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+#nombreCopie {
+    text-align: center;
+    font-size: 1em;
+
+}
+
+#message {
+    text-align: center;
+    margin-top: 2%;
+    border: 2px black solid;
+    width: 50%;
+    margin-left: 25%;
+}
