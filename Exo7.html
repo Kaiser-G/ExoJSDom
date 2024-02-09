@@ -104,20 +104,12 @@
                     let saisi = event.target.value;
                     console.log(saisi);
                     // let check = new RegExp("a,e", "g");
-                    if (!(
-                        ((event.keyCode >= 48) && (event.keyCode <= 57)) ||
-                        ((event.keyCode >= 96) && (event.keyCode <= 105)) ||
-                        (event.keyCode == 8) || (event.keyCode == 46) ||
-                        (event.keyCode == 110))) {
-                        event.preventDefault();
+                    //permet de voir si le mot est supérieur a 8
+                    if (saisi.length <= 8) {
                         message.innerHTML = "plus de 8";
+                    } else {
+                        message.innerHTML = "ok";
                     }
-
-
-                    // if (saisi.toString()) {
-                    //     message.innerHTML = "plus de 8";
-
-                    // }
 
                 }, false);
 
