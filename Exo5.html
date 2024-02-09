@@ -108,21 +108,37 @@
                     let saisi = event.target.value;
 
                     if ((saisi.indexOf("@") != -1) && (saisi.indexOf(".") != -1)) {
-                        message.innerHTML = "votre mail est valide";
+                        message.innerHTML = "<h2>votre mail est valide</h2>";
                     } else {
                         message.innerHTML = "Votre mail est invalide";
                     }
+                }, false);
 
-                    // if (saisi.indexOf(".") != -1) {
-                    //     message.innerHTML = "votre mail contient un .";
-                    // } else {
-                    //     message.innerHTML = "Vous avez oubliez le .";
-                    // }
+            // console.log(str.substring(1, 3));
+            // Expected output: "oz"
+            // console.log(saisi.substring(0, saisi.lenght));
+            // alert(saisi.substring(0, 10));
 
 
+            //faire un deuxième Event ?
+
+            texte.addEventListener("change",
+                (event) => {
+
+                    //permet de récupérer la valeur du texte frappé
+                    let saisi = event.target.value;
+                    console.log(saisi.substring(0, saisi.lenght));
+                    if (saisi != "@", ".") {
+                        message.innerHTML = "<h2>ATTENTION vous avez inversez le @ et le .</h2>";
+
+                    }
 
                 }, false);
         });
+
+
+
+
 
     </script>
 
