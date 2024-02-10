@@ -62,7 +62,7 @@
     </header>
     <!--énoncer-->
     <div class="container">
-        <h1>Exercice 7</h1>
+        <h1>Exo 7</h1>
         <p>
             <strong>Réalisez un programme en JavaScript qui demande à l'utilisateur un mot de passe.</strong><br>
             <br>
@@ -90,55 +90,6 @@
     <script>
         "use strict"; // Oblige la déclaration des variables
         // Zone de déclaration des PROCEDURES ET FONCTIONS
-        function VerifierPSW(event) {
-            let regexMaj = new RegExp("[A-Z]");
-            let regexMin = new RegExp("[a-z]");
-            let regexChiffre = new RegExp("[0-9]");
-            let regexSpecial = new RegExp("\\w");
-            let message = document.getElementById("message");
-            let compteur;
-            let saisi = document.getElementById("texte").value;
-            compteur = 0;
-
-            if (regexMaj.test(saisi)) {
-                compteur = compteur + 1;
-            }
-            if (regexMin.test(saisi)) {
-                compteur = compteur + 1;
-            }
-            if (regexChiffre.test(saisi)) {
-                compteur = compteur + 1;
-            }
-            if (regexSpecial.test(saisi)) {
-                compteur = compteur + 1;
-            }
-            if (saisi.length < 8) {
-                compteur = compteur - 1;
-            }
-            //case correspond au point du compteur ??
-            //info sur switch = https://www.w3schools.com/js/js_switch.asp
-            switch (compteur) {
-                case 4:
-                    message.innerHTML = '<div class="alert alert-success"><strong>Trés sécurisé !</strong></div>';
-
-                    break;
-                case 3:
-                    message.innerHTML = '<div class="alert alert-success"><strong>Sécurisé !</strong></div>';
-                    break;
-                case 2:
-                    message.innerHTML = '<div class="alert alert-warning"><strong>Moyen !</strong></div>';
-                    break;
-                case 1:
-                    message.innerHTML = '<div class="alert alert-danger"><strong>Dangereux !</strong></div>';;
-                    break;
-                case 0:
-                    message.innerHTML = '<div class="alert alert-danger"><strong>Dangereux !</strong></div>';
-                    break;
-                default:
-                    message.innerHTML = '';
-                    break;
-            }
-        }
 
         // Zone de déclaration des variables GLOBALES 
         // (celles du programme PRINCIPAL)
@@ -146,10 +97,46 @@
         // Se déclenche lorsque TOUTE LA PAGE est chargée (Style, images etc..)
         window.addEventListener('load', (event) => {
             // Le code de PROGRAMME PRINCIPAL
-            let mot_de_passe = document.getElementById("texte");
-            mot_de_passe.addEventListener("keyup", VerifierPSW, false);
+            let message = document.getElementById("message");
+            let motDePasse = document.getElementById("texte");
+
+            motDePasse.addEventListener("keyup",
+                (event) => {
+                    let saisi = event.target.value;
+                    console.log(saisi);
+                    // let check = new RegExp("a,e", "g");
+                    //permet de voir si le mot est supérieur a 8
+                    // if (saisi.length <= 8) {
+                    //     message.innerHTML = "plus de 8";
+                    // } else {
+                    //     message.innerHTML = "ok";
+                    // }
+
+
+                    // alert("Le key code est " + event.keyCode);
+                    if ((
+                        ((event.keyCode >= 33) && (event.keyCode <= 47)) ||//permet de vérifier les caractères spéciaux
+                        ((event.keyCode >= 65) && (event.keyCode <= 90)) ||//permet de vérifier les majuscules
+                        ((event.keyCode >= 97) && (event.keyCode <= 122)) &&//permet de vérifier les minuscules
+                        (saisi.length <= 8)// longueur de la chaine saisi par l'utilisateur
+
+                    )) {
+                        // alert("Votre code est sécurisé");
+
+                        message.innerHTML = "Votre code est sécurisé";
+
+                    } else {
+                        // alert("pas secur");
+                        message.innerHTML = "Pas secur";
+                    }
+
+
+
+                }, false);
 
         });
+
+
 
     </script>
 
