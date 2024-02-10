@@ -1,0 +1,38 @@
+/*Feuille de style pour exo8*/
+
+#form {
+    margin-top: 2%;
+}
+
+
+
+h2 {
+    text-align: center;
+
+}
+
+.texte {
+    text-align: center;
+    font-size: 1.1em;
+}
+
+.zero {
+    text-align: center;
+    font-size: 2em;
+
+}
+
+img {
+    height: 250px;
+    width: 250px;
+    border: 2px solid red;
+
+
+}
+
+#message {
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 5%;
+    font-size: 2em;
+}
