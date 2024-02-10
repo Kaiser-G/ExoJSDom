@@ -117,15 +117,17 @@
 
             let choix = [chaise, costume, grill, guitare, sac];
             let article = Math.floor(Math.random() * choix.length);
+            let hasard = choix[article];
+            hasard.style.display != "none";
 
 
+            // if ((chaise == "none") && (costume == "none") && (grill == "none") && (guitare == "none") && (sac == "none")) {
+            //     choix.random().style.display != "none";
+            //     let hasard = choix[article];
+            //     hasard.style.display != "none";
 
-            if ((chaise == "none") && (costume == "none") && (grill == "none") && (guitare == "none") && (sac == "none")) {
-                // choix.random().style.display != "none";
-                let hasard = choix[article];
-                article.style.display = block;
 
-            }
+            // }
 
 
 
