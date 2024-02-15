@@ -15,7 +15,7 @@
 <body>
     <header>
         <!--Barre de nav-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-success">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-success">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.html">Accueil</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -98,15 +98,21 @@
 
 
     <!--images des billets-->
-    <div class="">
-        <img id="dix" class="" src="./images/dix_euros.jpg" />
-        <div class="" id="billetDix">0</div>
+    <div id="billets" class="row align-items-start">
+        <div class="billet10 col-md-4">
+            <img id="dix" class="" src="./images/dix_euros.jpg" />
+            <div class="" id="billetDix">0</div>
+        </div>
 
-        <img class="" src="./images/cinq_euros.jpg" />
-        <div id="billetCinq" class="">0</div>
+        <div class="billet5 col-md-4">
+            <img class="" src="./images/cinq_euros.jpg" />
+            <div id="billetCinq" class="">0</div>
+        </div>
 
-        <img class="" src="./images/un_euro.jpg" />
-        <div id="billetUn" class="">0</div>
+        <div class="billet1 col-md-4">
+            <img class="" src="./images/un_euro.jpg" />
+            <div id="billetUn" class="">0</div>
+        </div>
     </div>
 
 

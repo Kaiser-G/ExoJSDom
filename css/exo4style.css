@@ -28,3 +28,15 @@ h2 {
     margin-bottom: 5%;
     font-size: 2em;
 }
+
+#billets {
+    margin-left: 5%;
+    margin-bottom: 10%;
+}
+
+#billetDix,
+#billetCinq,
+#billetUn {
+    text-align: center;
+    font-size: 2.5em;
+}
